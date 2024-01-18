@@ -59,9 +59,21 @@ const Room = () => {
   const handleBookNowClick = async (e) => {
     e.preventDefault()
 
-
     if (!checkinDate || !checkoutDate) {
       alert('Please provide checkin / checkout date')
+      return
+    }
+
+    if(adults > 6){
+      alert('Adults must be less than 6')
+      return
+    }
+    if(children > 4){
+      alert('Children must be less than 4')
+      return
+    }
+    if(pets > 4){
+      alert('Pets must be less than 4')
       return
     }
 

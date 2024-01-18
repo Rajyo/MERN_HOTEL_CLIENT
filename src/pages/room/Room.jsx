@@ -62,20 +62,19 @@ const Room = () => {
     if (!checkinDate || !checkoutDate) {
       alert('Please provide checkin / checkout date')
       return
+    } else {
+      function addOneDay(date = new Date()) {
+        date.setDate(date.getDate() + 1);
+        return date;
+      }
+
+      const date1 = new Date(checkinDate)
+      const date2 = new Date(checkoutDate)
+
+      var result1 = addOneDay(date1)
+      var result2 = addOneDay(date2)
     }
 
-    if(adults > 6){
-      alert('Adults must be less than 6')
-      return
-    }
-    if(children > 4){
-      alert('Children must be less than 4')
-      return
-    }
-    if(pets > 4){
-      alert('Pets must be less than 4')
-      return
-    }
 
     const numberOfDays = calcNoOfDays();
 
@@ -84,8 +83,8 @@ const Room = () => {
 
     const formData = {
       price: Math.round(calcNoOfDays() * discountPrice),
-      checkinDate,
-      checkoutDate,
+      checkinDate: result1,
+      checkoutDate: result2,
       adults,
       children: noOfChildren,
       numberOfDays,
@@ -199,7 +198,7 @@ const Room = () => {
             </div>
           </div>
 
-          
+
           <div className='md:col-span-4 rounded-xl shadow-lg dark:shadow dark:shadow-white sticky top-10 h-fit overflow-auto'>
             <div className='px-4 py-6 '>
               <h3 className='flex flex-wrap justify-center'>
@@ -242,13 +241,34 @@ const Room = () => {
                   <label htmlFor='adults' className='block text-sm font-medium text-gray-900 dark:text-gray-400'>
                     Adults
                   </label>
-                  <input className='w-full border border-gray-300 rounded-lg p-2.5' type='number' id='adults' value={adults} onChange={e => setAdults(+e.target.value)} min={1} max={5} />
+                  <input className='w-full border border-gray-300 rounded-lg p-2.5' type='number' id='adults' value={adults}
+                    onChange={e => {
+                      if (e.target.value > 5) {
+                        alert('Adults must be less than or equal to 5');
+                        return
+                      };
+                      if (e.target.value <= 0) {
+                        alert('Adults must be more than 1');
+                        return
+                      };
+                      setAdults(+e.target.value)
+                    }} min={1} max={5} />
                 </div>
                 <div className='w-1/2 pl-2'>
                   <label htmlFor='children' className='block text-sm font-medium text-gray-900 dark:text-gray-400'>
                     Children
                   </label>
-                  <input className='w-full border border-gray-300 rounded-lg p-2.5' type='number' id='children' value={noOfChildren} onChange={e => setNoOfChildren(+e.target.value)} min={0} max={3} />
+                  <input className='w-full border border-gray-300 rounded-lg p-2.5' type='number' id='children' value={noOfChildren} onChange={e => {
+                    if (e.target.value > 3) {
+                      alert('Children must be less than or equal to 3');
+                      return
+                    };
+                    if (e.target.value < 0) {
+                      alert('Childrens must be more than or equal to 0');
+                      return
+                    };
+                    setNoOfChildren(+e.target.value)
+                  }} min={0} max={3} />
                 </div>
               </div>
 
@@ -257,7 +277,18 @@ const Room = () => {
                   <label htmlFor='children' className='block text-sm font-medium text-gray-900 dark:text-gray-400'>
                     Pets
                   </label>
-                  <input className='w-full border border-gray-300 rounded-lg p-2.5' type='number' id='pets' value={noOfPets} onChange={e => setNoOfPets(+e.target.value)} min={0} max={3}
+                  <input className='w-full border border-gray-300 rounded-lg p-2.5' type='number' id='pets' value={noOfPets}
+                    onChange={e => {
+                      if (e.target.value > 3) {
+                        alert('Pets must be less than or equal to 3');
+                        return
+                      };
+                      if (e.target.value < 0) {
+                        alert('Pets must be more than or equal to 0');
+                        return
+                      };
+                      setNoOfPets(+e.target.value)
+                    }} min={0} max={3}
                   />
                 </div>
               </div>

@@ -2,15 +2,15 @@ import React from 'react'
 
 const Booking = ({data}) => {
     return (
-        <div className='bg-white rounded-md p-6 sm:p-8 md:p-10 lg:p-14 shadow-md shadow-slate-300'>
+        <div className='bg-[#f8f8ff] rounded-md p-6 sm:p-8 md:p-10 lg:p-14 shadow-md shadow-slate-300'>
             {
                 data &&
                 <div className='flex flex-col'>
 
-                    <div className='flex justify-between bg-slate-100 p-4 rounded-md flex-wrap'>
-                        <h1 className='text-4xl font-bold text-orange-500'>{data.hotelName}</h1>
+                    <div className='flex justify-between bg-green-500 p-4 rounded-md flex-wrap'>
+                        <h1 className='text-4xl font-bold text-white'>{data.hotelName}</h1>
                         {/* <h1 className='py-2 text-slate-500'><span className='font-semibold text-black'>Booking Id:</span> {data.bookingId.split(0, 66)[1]}</h1> */}
-                        <h1 className='py-2 font-semibold'>Status: <span className='text-orange-500'>Booked</span></h1>
+                        <h1 className='py-2 font-semibold'>Status: <span className='text-white'>Booked</span></h1>
                     </div>
 
                     <div className='flex justify-between px-4 mt-10 flex-wrap gap-4'>

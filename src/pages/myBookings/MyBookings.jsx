@@ -34,38 +34,38 @@ const MyBookings = () => {
             data?.map((item) => {
               return (
                 <Link to={`/myBookings/${item._id}`} state={item}>
-                  <div className='flex flex-col p-4 m-2 bg-white shadow-md shadow-slate-300 rounded-md hover:scale-105 duration-700 group hover:bg-blue-50'>
-                    <div className='p-2 bg-slate-50 group-hover:bg-white rounded-md'>
-                      <h1 className='text-center text-3xl font-bold text-orange-500 py-2'>{item.hotelName}</h1>
+                  <div className='flex flex-col p-4 m-2 bg-green-300 shadow-md shadow-slate-300 rounded-md hover:scale-105 duration-700 group hover:bg-green-700'>
+                    <div className='p-2 rounded-md'>
+                      <h1 className='text-center text-4xl font-bold text-black group-hover:text-white pt-2 pb-4'>{item.hotelName}</h1>
 
-                      <div className='flex max-[303px]:flex-col  flex-wrap justify-between my-6 gap-2 '>
+                      <div className='flex max-[303px]:flex-col flex-wrap justify-between my-6 gap-2 '>
                         <div className='flex flex-col items-center'>
                           <h1>Check In Date</h1>
-                          <h1 className='text-gray-600'>{item.checkinDate.split("T")[0]}</h1>
+                          <h1 className='group-hover:text-white text-gray-600'>{item.checkinDate.split("T")[0]}</h1>
                         </div>
                         <div className='flex flex-col items-center'>
                           <h1>Check Out Date</h1>
-                          <h1 className='text-gray-600'>{item.checkoutDate.split("T")[0]}</h1>
+                          <h1 className='group-hover:text-white text-gray-600'>{item.checkoutDate.split("T")[0]}</h1>
                         </div>
                       </div>
 
                       <div className='flex flex-wrap justify-between my-6'>
                         <div className='flex flex-col items-center'>
                           <h1>Adults</h1>
-                          <h1 className='text-gray-600'>{item.adults}</h1>
+                          <h1 className='group-hover:text-white text-gray-600'>{item.adults}</h1>
                         </div>
                         <div className='flex flex-col items-center'>
                           <h1>Children</h1>
-                          <h1 className='text-gray-600'>{item.children}</h1>
+                          <h1 className='group-hover:text-white text-gray-600'>{item.children}</h1>
                         </div>
                         <div className='flex flex-col items-center'>
                           <h1>Pets</h1>
-                          <h1 className='text-gray-600'>{item.pets}</h1>
+                          <h1 className='group-hover:text-white text-gray-600'>{item.pets}</h1>
                         </div>
 
                       </div>
 
-                      <div className='w-full text-center rounded-md py-1 text-white bg-green-500'>Booked</div>
+                      <div className='w-full text-center rounded-md py-1 text-black group-hover:bg-slate-300 bg-white'>Booked</div>
 
                     </div>
                   </div>

@@ -2,7 +2,7 @@ export const nav = [
     {
         url:"/",
         title:"Home",
-        name:"Hotelz"
+        name:"HOTEL"
     },
     {
         url:"/about",

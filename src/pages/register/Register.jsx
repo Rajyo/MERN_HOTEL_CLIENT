@@ -16,7 +16,7 @@ const Register = () => {
     }
 
     const user = {
-      username: username,
+      username: username.replace(/ /g,"_").toLocaleLowerCase(),
       email: email,
       password: password,
     };

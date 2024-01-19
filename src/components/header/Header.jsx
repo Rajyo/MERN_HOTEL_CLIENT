@@ -61,9 +61,9 @@ const Header = () => {
               click ? <IconContext.Provider value={{ color: "white" }}><BsBackspaceFill /></IconContext.Provider> : <IconContext.Provider value={{ color: "white" }}><FaAlignLeft /></IconContext.Provider>
             }
           </div>
-          <div className="sm:hidden text-lg mr-6">
+          <div className="sm:hidden text-lg font-extrabold mr-6">
             <Link to='/'>
-              Hotelz
+              HOTEL
             </Link>
           </div>
           <div className="sm:hidden">

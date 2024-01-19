@@ -10,9 +10,9 @@ const HomeMain = () => {
         <section className='flex sm:max-w-[95%] md:max-w-[90%] lg:max-w-[85%] px-4 sm:px-0 lg:px-0 items-center gap-12 mx-auto lg:mt-6'>
             <div className='py-6 sm:py-10 h-full'>
 
-                <h1 className='font-semibold md:font-semibold md:text-6xl text-3xl mb-6 mt-2 md:mt-6 lg:mt-10'>Explore Our Exquisite Hotel</h1>
+                <h1 className='font-semibold md:font-semibold md:text-6xl text-3xl mb-6 mt-2 md:mt-6 lg:mt-10'>Explore Our Exquisite Hotels</h1>
                 <p className='text-[#4a4a4a] text-sm sm:text-base lg:text-lg mb-6 sm:mb-12 max-w-lg'>
-                    Experience an Exquisite Hotel Immersed in Rich History and Timeless
+                    Experience Exquisite Hotels Immersed in Rich History and Timeless
                     Elegance.
                 </p>
                 <Link to={`/hotels`}>
@@ -21,15 +21,15 @@ const HomeMain = () => {
 
                 <div className='flex justify-between mt-8 md:mt-20'>
                     <div className='flex gap-3 flex-col items-center justify-center'>
-                        <p className='text-sm lg:text-xl text-center'>Basic Room</p>
+                        <p className='text-sm lg:text-xl text-center'>Delux Room</p>
                         <CountUpNumber duration={5000} endValue={50} />
                     </div>
                     <div className='flex gap-3 flex-col items-center justify-center'>
-                        <p className='text-sm lg:text-xl text-center'>Luxury Room</p>
+                        <p className='text-sm lg:text-xl text-center'>Resort Room</p>
                         <CountUpNumber duration={5000} endValue={120} />
                     </div>
                     <div className='flex gap-3 flex-col items-center justify-center'>
-                        <p className='text-sm lg:text-xl text-center'>Suite</p>
+                        <p className='text-sm lg:text-xl text-center'>Penthouse</p>
                         <CountUpNumber duration={5000} endValue={60} />
                     </div>
                 </div>

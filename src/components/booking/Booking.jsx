@@ -2,7 +2,7 @@ import React from 'react'
 
 const Booking = ({data}) => {
     return (
-        <div className='bg-[#f8f8ff] rounded-md p-6 sm:p-8 md:p-10 lg:p-14 shadow-md shadow-slate-300'>
+        <div className='bg-[#fff8dc] rounded-md p-6 sm:p-8 md:p-10 lg:p-14 shadow-md shadow-slate-300'>
             {
                 data &&
                 <div className='flex flex-col'>

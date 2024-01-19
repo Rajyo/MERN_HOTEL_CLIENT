@@ -46,14 +46,8 @@ const Header = () => {
 
 
   const logout = () => {
-    axiosInstance.get(
-      `api/auth/logout`
-    ).then((res) => {
       localStorage.clear();
       window.location.href = '/login'
-    }).catch((err) => {
-      console.log(err)
-    })
   }
 
   return (

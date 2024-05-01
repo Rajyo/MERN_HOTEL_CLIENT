@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import axiosInstance from "../../axios" 
+import { useEffect, useState } from 'react'
+import axiosInstance from "../../axios"
 import HotelCard from "../../components/hotel/HotelCard"
 import RoomCard from "../../components/room/RoomCard"
 
@@ -15,8 +15,8 @@ const Hotel = () => {
             setHotels(res.data)
         })
     }
-    
-    useEffect(() => {    
+
+    useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
         getHotels()
     }, [])
@@ -93,71 +93,88 @@ const Hotel = () => {
         setSearchedHotel(arr)
     }
 
-    
+
     return (
-        <>
-            <section className='mt-4 sm:m-8 md:m-12'>
-                <h3 className="my-5 text-center text-2xl sm:text-4xl lg:text-5xl font-bold uppercase ">Hotels</h3>
-                <p className="text-center sm:mx-28 md:mx-40 lg:mx-60 px-4">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
-                    error amet numquam iure provident voluptate esse quasi, veritatis
-                    totam voluptas nostrum quisquam eum porro a pariatur veniam.
-                </p>
-            </section>
+        <div className='relative'>
+            {
+                (hotels?.length == 0 || hotels == null) &&
+                <div className='absolute z-10 w-full h-full flex'>
+                    <section className="bg-zinc-900 w-[90%] sm:w-[75%] md:w-[50%] m-auto flex flex-col gap-6 p-4 sm:p-8 md:p-10 lg:p-12 rounded-md text-white ">
 
+                        <h1 className="text-center font-bold text-3xl text-red-600">IMPORTANT!</h1>
+                        <h1>You are seeing this message because the Backend Server is hosted on RENDER&apos;s FREE Tier Web Service and it spin down after 15 minutes of inactivity.</h1>
+                        <h1>Since there are no active users and I am using a Free Service, the first request might take longer to respond.</h1>
+                        <h1 className="uppercase text-center text-xl font-bold mt-10 text-blue-500">So please refresh the page and try again.</h1>
 
-            <div className='max-w-[95%] md:max-w-[90%] lg:max-w-[85%] m-auto sm:px-4 md:px-6 lg:px-10 py-5 my-6 sm:my-0 rounded-md bg-[#f2c641]'>
-                <form onSubmit={submitForm} className='flex flex-col sm:flex-row justify-between'>
-
-                    <div className='flex max-[500px]:flex-col justify-around flex-wrap sm:gap-4 lg:gap-20'>
-                        <div className='flex flex-col justify-around max-[500px]:flex-row'>
-                            <span className="max-[350px]:hidden max-[500px]:py-2">Type</span>
-                            <select className=" border border-gray-300 bg-gray-200 py-2 mt-1 rounded-md lg:w-28" name='type' value={selectedType} onChange={(e) => { setSelectedType(e.target.value) }}>
-                                <option>Select Type</option>
-                                {
-                                    Array.from(typeSet).map((item) => (
-                                        <option value={item} className='capitalize'>{item}</option>
-                                    ))
-                                }
-                            </select>
-                        </div>
-                        <div className='flex flex-col justify-around max-[500px]:flex-row'>
-                            <span className="max-[350px]:hidden max-[500px]:py-2">City</span>
-                            <select className=" border border-gray-300 bg-gray-200 py-2 mt-1 rounded-md lg:w-28" name='type' value={selectedCity} onChange={(e) => { setSelectedCity(e.target.value) }}>
-                                <option >Select City</option>
-                                {
-                                    Array.from(citySet).map((item) => (
-                                        <option value={item}>{item}</option>
-                                    ))
-                                }
-                            </select>
-                        </div>
-                        <div className='flex flex-col justify-around max-[500px]:flex-row min-[1150px]:w-80'>
-                            <span className="max-[350px]:hidden max-[500px]:py-2">Hotel Name</span>
-                            <input className="pl-2 border border-gray-300 py-2 mt-1 h-9 rounded-md" placeholder='Search Hotel Name' type='text' name='hotelName' value={hotelName} onChange={(e) => { setHotelName(e.target.value) }} />
-                        </div>
-                    </div>
-
-                    <div className='px-6 sm:px-0 mt-7 lg:mt-1'>
-                        <button className='w-full px-6 rounded-lg md:px-8 lg:px-10 h-9 lg:h-14 bg-[#038c7f] shadow-sm shadow-[#038c7f] text-white font-bold text-base md:text-xl hover:scale-110 duration-300 transition-all'>Search</button>
-                    </div>
-                </form>
-            </div>
-
-            <section className='my-6 sm:my-8 md:my-12 lg:my-16'>
-                <div className='max-w-[95%] md:max-w-[90%] m-auto'>
-
-                    <div className='grid sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-8'>
-                        {searchedHotel == null || (selectedType == "Select Type" && selectedCity == "Select City" && hotelName == "")
-                            ? hotels?.map(item => <HotelCard key={item.id} item={item} />)
-                            : searchedHotel?.map(item => <RoomCard key={item.id} item={item} />)
-                        }
-                    </div>
-
+                    </section>
                 </div>
-            </section>
+            }
 
-        </>
+            <div className={`${(hotels?.length == 0 || hotels == null) ? "opacity-20" : "opacity-100"}`}>
+
+                <section className='mt-4 sm:m-8 md:m-12'>
+                    <h3 className="my-5 text-center text-2xl sm:text-4xl lg:text-5xl font-bold uppercase ">Hotels</h3>
+                    <p className="text-center sm:mx-28 md:mx-40 lg:mx-60 px-4">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
+                        error amet numquam iure provident voluptate esse quasi, veritatis
+                        totam voluptas nostrum quisquam eum porro a pariatur veniam.
+                    </p>
+                </section>
+
+
+                <div className='max-w-[95%] md:max-w-[90%] lg:max-w-[85%] m-auto sm:px-4 md:px-6 lg:px-10 py-5 my-6 sm:my-0 rounded-md bg-[#f2c641]'>
+                    <form onSubmit={submitForm} className='flex flex-col sm:flex-row justify-between'>
+
+                        <div className='flex max-[500px]:flex-col justify-around flex-wrap sm:gap-4 lg:gap-20'>
+                            <div className='flex flex-col justify-around max-[500px]:flex-row'>
+                                <span className="max-[350px]:hidden max-[500px]:py-2">Type</span>
+                                <select className=" border border-gray-300 bg-gray-200 py-2 mt-1 rounded-md lg:w-28" name='type' value={selectedType} onChange={(e) => { setSelectedType(e.target.value) }}>
+                                    <option>Select Type</option>
+                                    {
+                                        Array.from(typeSet).map((item) => (
+                                            <option key={item._id} value={item} className='capitalize'>{item}</option>
+                                        ))
+                                    }
+                                </select>
+                            </div>
+                            <div className='flex flex-col justify-around max-[500px]:flex-row'>
+                                <span className="max-[350px]:hidden max-[500px]:py-2">City</span>
+                                <select className=" border border-gray-300 bg-gray-200 py-2 mt-1 rounded-md lg:w-28" name='type' value={selectedCity} onChange={(e) => { setSelectedCity(e.target.value) }}>
+                                    <option >Select City</option>
+                                    {
+                                        Array.from(citySet).map((item) => (
+                                            <option key={item._id} value={item}>{item}</option>
+                                        ))
+                                    }
+                                </select>
+                            </div>
+                            <div className='flex flex-col justify-around max-[500px]:flex-row min-[1150px]:w-80'>
+                                <span className="max-[350px]:hidden max-[500px]:py-2">Hotel Name</span>
+                                <input className="pl-2 border border-gray-300 py-2 mt-1 h-9 rounded-md" placeholder='Search Hotel Name' type='text' name='hotelName' value={hotelName} onChange={(e) => { setHotelName(e.target.value) }} />
+                            </div>
+                        </div>
+
+                        <div className='px-6 sm:px-0 mt-7 lg:mt-1'>
+                            <button className='w-full px-6 rounded-lg md:px-8 lg:px-10 h-9 lg:h-14 bg-[#038c7f] shadow-sm shadow-[#038c7f] text-white font-bold text-base md:text-xl hover:scale-110 duration-300 transition-all'>Search</button>
+                        </div>
+                    </form>
+                </div>
+
+                <section className='my-6 sm:my-8 md:my-12 lg:my-16'>
+                    <div className='max-w-[95%] md:max-w-[90%] m-auto'>
+
+                        <div className='grid sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-8'>
+                            {searchedHotel == null || (selectedType == "Select Type" && selectedCity == "Select City" && hotelName == "")
+                                ? hotels?.map(item => <HotelCard key={item.id} item={item} />)
+                                : searchedHotel?.map(item => <RoomCard key={item.id} item={item} />)
+                            }
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
     )
 }
 

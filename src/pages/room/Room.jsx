@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import RoomCaraousel from './RoomCaraousel';
@@ -63,6 +63,7 @@ const Room = () => {
       alert('Please provide checkin / checkout date')
       return
     } else {
+      // eslint-disable-next-line no-inner-declarations
       function addOneDay(date = new Date()) {
         date.setDate(date.getDate() + 1);
         return date;
@@ -246,11 +247,11 @@ const Room = () => {
                       if (e.target.value > 5) {
                         alert('Adults must be less than or equal to 5');
                         return
-                      };
+                      }
                       if (e.target.value <= 0) {
-                        alert('Adults must be more than 1');
+                        alert('Adults must be more than 1')
                         return
-                      };
+                      }
                       setAdults(+e.target.value)
                     }} min={1} max={5} />
                 </div>
@@ -262,11 +263,11 @@ const Room = () => {
                     if (e.target.value > 3) {
                       alert('Children must be less than or equal to 3');
                       return
-                    };
+                    }
                     if (e.target.value < 0) {
-                      alert('Childrens must be more than or equal to 0');
+                      alert('Childrens must be more than or equal to 0')
                       return
-                    };
+                    }
                     setNoOfChildren(+e.target.value)
                   }} min={0} max={3} />
                 </div>
@@ -280,13 +281,13 @@ const Room = () => {
                   <input className='w-full border border-gray-300 rounded-lg p-2.5' type='number' id='pets' value={noOfPets}
                     onChange={e => {
                       if (e.target.value > 3) {
-                        alert('Pets must be less than or equal to 3');
+                        alert('Pets must be less than or equal to 3')
                         return
-                      };
+                      }
                       if (e.target.value < 0) {
-                        alert('Pets must be more than or equal to 0');
+                        alert('Pets must be more than or equal to 0')
                         return
-                      };
+                      }
                       setNoOfPets(+e.target.value)
                     }} min={0} max={3}
                   />

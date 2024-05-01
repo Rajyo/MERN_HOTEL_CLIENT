@@ -1,4 +1,4 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
 
 const Booking = ({data}) => {
     return (
@@ -17,7 +17,7 @@ const Booking = ({data}) => {
                         <div className='flex flex-col '>
                             <h1 className='text-xl font-semibold mb-1'>From,</h1>
                             <h1 className='text-slate-500'>221B</h1>
-                            <h1 className='text-slate-500'>Baker's Street</h1>
+                            <h1 className='text-slate-500'>Baker&apos;s Street</h1>
                             <h1 className='text-slate-500'>London - 454487</h1>
                         </div>
                         <div className='flex flex-col '>

@@ -1,6 +1,6 @@
-import React from "react"
 import { Link } from "react-router-dom"
 
+// eslint-disable-next-line react/prop-types
 const BlogCard = ({ item: { id, cover, title, para, catgeory, date } }) => {
   return (
     <>

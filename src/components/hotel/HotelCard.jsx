@@ -1,4 +1,4 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom"
 import hero1 from '../homeMain/hero-1.jpeg'
 

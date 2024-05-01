@@ -1,5 +1,5 @@
-import React from 'react'
 
+// eslint-disable-next-line react/prop-types
 const Error = ({ data, error }) => {
   return (
     <>

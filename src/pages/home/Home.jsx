@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import HomeMain from '../../components/homeMain/HomeMain'
 import HomeAbout from '../../components/homeAbout/HomeAbout'
 import HomeTestimonial from '../../components/homeTestimonial/HomeTestimonial'

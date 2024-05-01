@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import BlogData from "../../components/blog/BlogData"
 import Error from "../../components/error/Error"
@@ -57,7 +57,7 @@ const SingleBlog = () => {
               <ul className="mt-4 grid grid-col-1 min-[350px]:grid-cols-2 sm:grid-cols-1">
                 {BlogData.map((item) => {
                   return (
-                    <li className="my-3 hover:translate-x-3 transition-all duration-500">
+                    <li key={item.id} className="my-3 hover:translate-x-3 transition-all duration-500">
                       <i className='far fa-play-circle text-[#31b675]'></i>
                       <span className="text-base ml-1 sm:ml-4">{item.catgeory}</span>
                     </li>

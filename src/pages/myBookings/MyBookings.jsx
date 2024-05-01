@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axiosInstance from '../../axios'
 import { Link } from 'react-router-dom'
 
@@ -33,7 +33,7 @@ const MyBookings = () => {
           {
             data?.map((item) => {
               return (
-                <Link to={`/myBookings/${item._id}`} state={item} className='shadow-lg shadow-gray-300 hover:scale-105 duration-700 group'>
+                <Link key={item.id} to={`/myBookings/${item._id}`} state={item} className='shadow-lg shadow-gray-300 hover:scale-105 duration-700 group'>
                   <div className='bg-[#2BAE66FF] py-4 rounded-t-lg'>
                     <h1 className='text-center text-4xl font-bold text-black group-hover:text-white pt-2 pb-4'>{item.hotelName}</h1>
                   </div>

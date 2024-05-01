@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import BlogData from "../../components/blog/BlogData"
 import BlogCard from "../../components/blog/BlogCard"
 
 const Blog = () => {
-  const [items, setIems] = useState(BlogData)
+  const [items] = useState(BlogData)
   useEffect(()=>{
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   },[])

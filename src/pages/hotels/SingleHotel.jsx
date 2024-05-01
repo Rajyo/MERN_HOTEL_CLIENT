@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import RoomCard from '../../components/room/RoomCard';
 
@@ -6,8 +6,8 @@ const SingleHotel = () => {
   const location = useLocation();
   const data = location.state;
 
-  const [name, useName] = useState(data?.name)
-  const [city, useCity] = useState(data?.city)
+  const [name] = useState(data?.name)
+  const [city] = useState(data?.city)
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });

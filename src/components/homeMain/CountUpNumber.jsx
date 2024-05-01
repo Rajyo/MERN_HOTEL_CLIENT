@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+// eslint-disable-next-line react/prop-types
 const CountUpNumber = ({ endValue, duration }) => {
   const [count, setCount] = useState(0);
 

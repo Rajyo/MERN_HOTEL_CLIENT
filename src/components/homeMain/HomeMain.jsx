@@ -1,4 +1,3 @@
-import React from 'react'
 import CountUpNumber from './CountUpNumber';
 import hero1 from './hero-1.jpeg'
 import hero2 from './hero-2.jpeg'

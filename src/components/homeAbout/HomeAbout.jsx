@@ -1,4 +1,3 @@
-import React from 'react'
 import hero from "../homeMain/hero-1.jpeg"
 import { Link } from 'react-router-dom'
 

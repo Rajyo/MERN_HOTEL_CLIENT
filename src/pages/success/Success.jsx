@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axiosInstance from '../../axios';
 import Error from '../../components/error/Error';
 import { Link } from 'react-router-dom';
@@ -46,7 +46,7 @@ const Success = () => {
                   <Link to='/myBookings' className='py-2 mt-2 text-white bg-green-400 px-2 rounded-md hover:scale-105 hover:bg-green-600'>Go to My Booking</Link>
                 </div>
                 <h1 className='text-4xl font-semibold text-center animate-pulse my-8 text-blue-600'>Thank you for your Booking</h1>
-                <h1 className='text-xl font-semibold text-center animate-bounce mb-4 text-teal-600'>Hers's your receipt</h1>
+                <h1 className='text-xl font-semibold text-center animate-bounce mb-4 text-teal-600'>Hers&apos;s your receipt</h1>
                 <Booking data={data} />
               </section>
               )

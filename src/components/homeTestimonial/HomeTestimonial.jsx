@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,8 +7,7 @@ import { MdNavigateNext } from "react-icons/md";
 import { ImQuotesLeft } from "react-icons/im";
 import { testimonial } from "../data";
 
-const SampleNextArrow = (props) => {
-  const { onClick } = props;
+const SampleNextArrow = ({onClick}) => {
   return (
     <div className="bg-slate-300 w-12 h-12 rounded-full cursor-pointer flex justify-center align-middle p-1 absolute top-[43%] right-0" onClick={onClick}>
       <button>
@@ -16,8 +16,7 @@ const SampleNextArrow = (props) => {
     </div>
   );
 };
-const SamplePrevArrow = (props) => {
-  const { onClick } = props;
+const SamplePrevArrow = ({onClick}) => {
   return (
     <div className="bg-slate-300 w-12 h-12 rounded-full cursor-pointer flex justify-center align-middle p-1 absolute top-[43%] z-50" onClick={onClick}>
       <button>

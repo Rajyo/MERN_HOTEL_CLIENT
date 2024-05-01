@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import hero1 from "../../components/homeMain/hero-1.jpeg"
 import hero2 from "../../components/homeMain/hero-2.jpeg"
 

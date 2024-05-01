@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const HeroNewsletter = () => {
     const [email, setEmail] = useState("Your email")

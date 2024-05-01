@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import userIcon from "./profile.png"
 import axiosInstance from '../../axios'
@@ -7,10 +7,10 @@ import axiosInstance from '../../axios'
 const Profile = () => {
   const location = useLocation()
 
-  const [email, setEmail] = useState(location.state.email)
+  const [email] = useState(location.state.email)
   const [username, setUsername] = useState(location.state.username)
   const [password, setPassword] = useState(null)
-  const [isAdmin, setIsAdmin] = useState(location.state.isAdmin)
+  const [isAdmin] = useState(location.state.isAdmin)
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -34,7 +34,7 @@ const Profile = () => {
     const size = Object.keys(updatedUser).length
 
     size > 0 && await axiosInstance.put(`api/users/`, updatedUser)
-      .then(res => {
+      .then(() => {
         //console.log(res.data); 
         window.location.href = '/'
       })

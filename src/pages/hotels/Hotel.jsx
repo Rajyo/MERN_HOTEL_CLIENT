@@ -104,7 +104,7 @@ const Hotel = () => {
                         <h1 className="text-center font-bold text-3xl text-red-600">IMPORTANT!</h1>
                         <h1>You are seeing this message because the Backend Server is hosted on RENDER&apos;s FREE Tier Web Service and it spin down after 15 minutes of inactivity.</h1>
                         <h1>Since there are no active users and I am using a Free Service, the first request might take longer to respond.</h1>
-                        <h1 className="uppercase text-center text-xl font-bold mt-10 text-blue-500">So please refresh the page and try again.</h1>
+                        <h1 className="uppercase text-center text-xl font-bold mt-10 text-blue-500">So please refresh the page and wait for 20-30 seconds</h1>
 
                     </section>
                 </div>

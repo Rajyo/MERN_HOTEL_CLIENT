@@ -20,7 +20,7 @@ const SingleHotel = () => {
       <section className="mt-6 sm:mt-8 md:mt-12 ">
         <h3 className="my-5 text-center text-3xl sm:text-4xl lg:text-5xl font-bold uppercase">{data?.name} ({data?.city}) </h3>
         <p className="text-center sm:mx-28 md:mx-40 lg:mx-60 px-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. {data.description} Quos maxime voluptate magnam eaque, nam cupiditate eum ipsa! Molestias omnis maiores repellat eos aperiam velit natus quaerat! Modi fugit minus perferendis.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos maxime voluptate magnam eaque, nam cupiditate eum ipsa! Molestias omnis maiores repellat eos aperiam velit natus quaerat! Modi fugit minus perferendis.
         </p>
       </section>
       <section className='mt-6 sm:mt-8 md:mt-12 max-w-[85%] m-auto'>

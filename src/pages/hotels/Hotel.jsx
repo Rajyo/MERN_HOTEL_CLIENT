@@ -5,6 +5,7 @@ import RoomCard from "../../components/room/RoomCard"
 import CardSkeleton from '../../components/skeleton/CardSkeleton'
 import SearchSkeleton from '../../components/skeleton/SearchSkeleton'
 
+
 const Hotel = () => {
     const [hotels, setHotels] = useState(null)
     const [selectedType, setSelectedType] = useState("Select Type")
@@ -20,10 +21,8 @@ const Hotel = () => {
     }
 
     const getNotice = async () => {
-        await new Promise((resolve) => setTimeout(resolve, 10000))
-        setNotice(true)
         await new Promise((resolve) => setTimeout(resolve, 5000))
-        window.location.reload('/hotels')
+        setNotice(true)
     }
 
     useEffect(() => {
@@ -117,6 +116,11 @@ const Hotel = () => {
                         <h1 className="uppercase text-center text-xl font-bold mt-10 text-blue-500">So please refresh the page and wait for 20-30 seconds</h1>
 
                     </section>
+                    {
+                        setTimeout(() => {
+                            window.location.href = "/hotels"
+                        }, 5000)
+                    }
                 </div>
             }
 

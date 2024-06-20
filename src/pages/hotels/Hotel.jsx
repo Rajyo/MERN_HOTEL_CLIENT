@@ -21,7 +21,7 @@ const Hotel = () => {
     }
 
     const getNotice = async () => {
-        await new Promise((resolve) => setTimeout(resolve, 5000))
+        await new Promise((resolve) => setTimeout(resolve, 10000))
         setNotice(true)
     }
 

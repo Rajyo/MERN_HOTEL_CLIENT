@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { nav } from "../data"
 import { IconContext } from "react-icons";
 import { FaAlignLeft } from "react-icons/fa6";
@@ -29,6 +29,7 @@ const Header = () => {
   const token = localStorage.getItem("access_token");
 
   var id = localStorage.getItem("_id")
+  
 
   const getUser = () => {
     axiosInstance.get(
@@ -115,27 +116,27 @@ const Header = () => {
                     </li>
                     <hr />
 
-                    <li className='flex text-base my-2 pt-[8px] hover:scale-105'>
+                    <li className='flex text-base my-2 pt-[8px]'>
                       <span className="mx-5">
                         <IconContext.Provider value={{ color: "white", size: "1.35rem" }}><MdManageAccounts /></IconContext.Provider>
                       </span>
-                      <Link to='/profile' onClick={closeMobileAccount} state={profile}>
+                      <Link to='/profile' className="w-full hover:scale-105 hover:cursor-pointer transition-all duration-200" onClick={closeMobileAccount} state={profile} >
                         Profile
                       </Link>
                     </li>
-                    <li className='flex text-base my-2 pt-[8px] hover:scale-105 '>
+                    <li className='flex text-base my-2 pt-[8px]'>
                       <span className="mx-5">
                         <IconContext.Provider value={{ color: "white", size: "1.35rem" }}><AiOutlineSolution /></IconContext.Provider>
                       </span>
-                      <Link to='/myBookings' onClick={closeMobileAccount} >
+                      <Link to='/myBookings' className="w-full hover:scale-105 hover:cursor-pointer transition-all duration-200" onClick={closeMobileAccount} >
                         My Bookings
                       </Link>
                     </li>
-                    <li className='flex text-base my-2 pt-[8px] hover:scale-105 '>
+                    <li className='flex text-base my-2 pt-[8px]'>
                       <span className="mx-5">
                         <IconContext.Provider value={{ color: "white", size: "1.25rem" }}><RiLogoutBoxLine /></IconContext.Provider>
                       </span>
-                      <button type="button" onClick={() => { logout(); closeMobileAccount() }}>Logout</button>
+                      <button type="button" className="w-full flex hover:scale-105 hover:cursor-pointer transition-all duration-200" onClick={() => { logout(); closeMobileAccount() }}>Logout</button>
                     </li>
                   </ul>)
                 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import emailjs from "emailjs-com";
+import {toast} from "react-toastify"
 
 const Contact = () => {
   const [fname, setFname] = useState("")
@@ -31,8 +32,9 @@ const Contact = () => {
         import.meta.env.VITE_SECRET
       );
 
-      alert("Sent");
+      toast.success("Message Sent");
     } catch (e) {
+      toast.error("Message Not Sent");
       console.log(e);
     }
 
@@ -63,40 +65,40 @@ const Contact = () => {
                   <span className="text-gray-500">
                     First name <label className="text-red-900">*</label>
                   </span>
-                  <input className="pl-2 border border-gray-300 py-3 mt-1" type='text' name='fname' value={fname} onChange={(e) => setFname(e.target.value)} required />
+                  <input className="pl-2 border border-gray-300 py-3 mt-1" type='text' name='fname' value={fname} onChange={(e) => setFname(e.target.value)} minLength={2} maxLength={10} required />
                 </div>
                 <div className='flex flex-col'>
                   <span className="text-gray-500">
                     Last name
                   </span>
-                  <input className="pl-2 border border-gray-300 py-3 mt-1" type='text' name='lname' value={lname} onChange={(e) => setLname(e.target.value)} />
+                  <input className="pl-2 border border-gray-300 py-3 mt-1" type='text' name='lname' value={lname} onChange={(e) => setLname(e.target.value)} minLength={2} maxLength={10} />
                 </div>
                 <div className='flex flex-col'>
                   <span className="text-gray-500">Subject <label className="text-red-900">*</label></span>
-                  <input className="pl-2 border border-gray-300 py-3 mt-1" type='text' name='subject' value={subject} onChange={(e) => setSubject(e.target.value)} required />
+                  <input className="pl-2 border border-gray-300 py-3 mt-1" type='text' name='subject' value={subject} onChange={(e) => setSubject(e.target.value)} minLength={5} maxLength={50} required />
                 </div>
                 <div className='flex flex-col'>
                   <span className="text-gray-500">
                     Email <label className="text-red-900">*</label>
                   </span>
-                  <input className="pl-2 border border-gray-300 py-3 mt-1" type='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
+                  <input className="pl-2 border border-gray-300 py-3 mt-1" type='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} minLength={5} maxLength={30} required />
                 </div>
                 <div className='flex flex-col'>
                   <span className="text-gray-500">
                   Contact number
                   </span>
-                  <input className="pl-2 border border-gray-300 py-3 mt-1" type='number' name='phone' value={phone} onChange={(e) => setPhone(e.target.value)} />
+                  <input className="pl-2 border border-gray-300 py-3 mt-1" type='number' name='phone' value={phone} onChange={(e) => setPhone(e.target.value)} minLength={10} maxLength={10} />
                 </div>
                 <div className='flex flex-col'>
                   <span className="text-gray-500">Company name</span>
-                  <input className="pl-2 border border-gray-300 py-3 mt-1" type='text' name='company' value={company} onChange={(e) => setCompany(e.target.value)} />
+                  <input className="pl-2 border border-gray-300 py-3 mt-1" type='text' name='company' value={company} onChange={(e) => setCompany(e.target.value)} minLength={5} maxLength={30} />
                 </div>
               </div>
               <div className='flex flex-col mt-8'>
                 <span className="text-gray-500">
                   Write your message <label className="text-red-900">*</label>
                 </span>
-                <textarea className="p-2 border border-gray-300 mt-1 h-32" cols='30' rows='10' name='message' value={message} onChange={(e) => setMessage(e.target.value)} required ></textarea>
+                <textarea className="p-2 border border-gray-300 mt-1 h-32" cols='30' rows='10' name='message' value={message} onChange={(e) => setMessage(e.target.value)} minLength={10} maxLength={100} required ></textarea>
               </div>
               <button className='px-6 rounded-lg md:px-8 lg:px-10 py-2 md:py-3 mt-5 mb-10 sm:mb-16 md:mb-20 lg:mb-28 bg-[#038c7f] shadow-sm shadow-[#038c7f] text-white font-bold text-base md:text-xl hover:scale-110 duration-300 transition-all'>Contact</button>
             </form>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { nav } from "../data"
 import { IconContext } from "react-icons";
 import { FaAlignLeft } from "react-icons/fa6";
@@ -8,7 +8,6 @@ import { BsBackspaceFill } from "react-icons/bs";
 import { BsBackspaceReverseFill } from "react-icons/bs";
 
 import axiosInstance from "../../axios";
-import userIcon from "./user-icon.png"
 
 import { AiOutlineSolution } from "react-icons/ai";
 import { MdManageAccounts } from "react-icons/md";
@@ -98,7 +97,7 @@ const Header = () => {
               ? <>
                 <div className='text-xl absolute right-0 pr-2 hover:cursor-pointer mt-1' onClick={handleAccount}>
                   {
-                    account ? <img src={userIcon} alt="cover" className="w-9 -mt-2 outline-dotted rounded-full" /> : <img src={userIcon} alt="cover" className="w-9 -mt-2 rounded-full" />
+                    account ? <img src="/images/user-icon.png" alt="cover" className="w-9 -mt-2 outline-dotted rounded-full" /> : <img src="/images/user-icon.png" alt="cover" className="w-9 -mt-2 rounded-full" />
                   }
                 </div>
                 {
@@ -106,7 +105,7 @@ const Header = () => {
                     <li className='flex text-base my-3 pb-[2px]'>
                       {profile && <>
                         <div className="mx-3 py-4">
-                          <img src={userIcon} alt="cover" className="w-9 -mt-2 outline-dotted rounded-full" />
+                          <img src="/images/user-icon.png" alt="cover" className="w-9 -mt-2 outline-dotted rounded-full" />
                         </div>
                         <div className="ml-1 mr-3">
                           <p>@{profile.username}</p>

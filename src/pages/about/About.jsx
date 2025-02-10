@@ -1,6 +1,4 @@
 import { useEffect } from 'react'
-import hero1 from "../../components/homeMain/hero-1.jpeg"
-import hero2 from "../../components/homeMain/hero-2.jpeg"
 
 const About = () => {
   useEffect(()=>{
@@ -30,14 +28,14 @@ const About = () => {
           </div>
 
           <div className='overflow-hidden rounded-lg md:h-auto mt-4 md:mt-0' >
-            <img src={hero1} alt='hero' width={300} height={300} className='object-cover w-full h-full hover:scale-125 transition-all duration-700' />
+            <img src="/images/hero-1.jpeg" alt='hero' width={300} height={300} className='object-cover w-full h-full hover:scale-125 transition-all duration-700' />
           </div>
         </div>
       </div>
       <div className='sm:mb-10 md:mb-24'>
         <div className='md:grid md:grid-cols-2 m-4 mt-12 sm:mt-16 md:mt-8 sm:m-8 md:m-12 lg:mx-28'>
           <div className='max-[768px]:hidden overflow-hidden md:h-auto mt-4 md:mt-0'>
-            <img src={hero2} alt='hero' width={300} height={300} className='object-cover rounded-lg w-full h-full hover:scale-125 transition-all duration-700' />
+            <img src="/images/hero-2.jpeg" alt='hero' width={300} height={300} className='object-cover rounded-lg w-full h-full hover:scale-125 transition-all duration-700' />
           </div>
           <div className='md:max-w-[90%] md:ml-16'>
             <h1 className='text-lg sm:text-2xl md:text-4xl lg:text-6xl text-wrap my-2'>Our Features</h1>
@@ -50,7 +48,7 @@ const About = () => {
             </button>
           </div>
           <div className='md:hidden overflow-hidden rounded-lg mt-4 mb-12 sm:mb-20' >
-            <img src={hero2} alt='hero' width={300} height={300} className='object-cover w-full h-full hover:scale-125 transition-all duration-700' />
+            <img src="/images/hero-2.jpeg" alt='hero' width={300} height={300} className='object-cover w-full h-full hover:scale-125 transition-all duration-700' />
           </div>
         </div>
       </div>

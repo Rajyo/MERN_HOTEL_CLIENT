@@ -1,4 +1,3 @@
-import hero from "../homeMain/hero-1.jpeg"
 import { Link } from 'react-router-dom'
 
 const HeroAbout = () => {
@@ -21,7 +20,7 @@ const HeroAbout = () => {
         </div>
 
         <div className='overflow-hidden rounded-lg md:h-auto mt-4 md:mt-0' >
-          <img src={hero} alt='hero' width={300} height={300} className='object-cover w-full h-full hover:scale-125 transition-all duration-700' />
+          <img src="/images/hero-1.jpeg" alt='hero' width={300} height={300} className='object-cover w-full h-full hover:scale-125 transition-all duration-700' />
         </div>
       </div>
     </>

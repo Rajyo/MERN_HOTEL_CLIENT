@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import userIcon from "./profile.png";
 import axiosInstance from "../../axios";
 import { toast } from "react-toastify";
 
@@ -62,7 +61,12 @@ const Profile = () => {
       <div className="max-w-[95%] md:max-w-[90%] lg:max-w-[85%] m-auto mb-10 md:mb-28 mt-6">
         <section className="grid sm:grid-cols-2 gap-4">
           <div className="m-auto">
-            <img src={userIcon} alt="" width={300} height={300} />
+            <img
+              src="/images/profile.png"
+              alt="profile"
+              width={300}
+              height={300}
+            />
           </div>
 
           <form

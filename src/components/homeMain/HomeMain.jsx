@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
 import CountUpNumber from "./CountUpNumber";
-import hero1 from "./hero-1.jpeg";
-import hero2 from "./hero-2.jpeg";
-import hero3 from "./hero-3.jpeg";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -53,7 +50,7 @@ const HomeMain = () => {
         <div className="sm:hidden mt-4 grid gap-4 grid-cols-1">
           <div className="rounded-2xl overflow-hidden h-48">
             <img
-              src={hero1}
+              src="/images/hero-1.jpeg"
               alt="hero-1"
               width={300}
               height={300}
@@ -64,7 +61,7 @@ const HomeMain = () => {
           <div className="grid grid-cols-2 gap-8 h-48">
             <div className="rounded-2xl overflow-hidden">
               <img
-                src={hero2}
+                src="/images/hero-2.jpeg"
                 alt="hero-2"
                 width={300}
                 height={300}
@@ -73,7 +70,7 @@ const HomeMain = () => {
             </div>
             <div className="rounded-2xl overflow-hidden">
               <img
-                src={hero3}
+                src="/images/hero-3.jpeg"
                 alt="hero-3"
                 width={300}
                 height={300}
@@ -86,7 +83,7 @@ const HomeMain = () => {
       <div className="sm:grid hidden gap-8 grid-cols-1 md:mt-10">
         <div className="rounded-2xl overflow-hidden sm:h-40 md:h-56">
           <img
-            src={hero1}
+            src="/images/hero-1.jpeg"
             alt="hero-1"
             width={300}
             height={300}
@@ -97,7 +94,7 @@ const HomeMain = () => {
         <div className="grid grid-cols-2 gap-8 sm:h-40 md:h-56">
           <div className="rounded-2xl overflow-hidden">
             <img
-              src={hero2}
+              src="/images/hero-2.jpeg"
               alt="hero-2"
               width={300}
               height={300}
@@ -106,7 +103,7 @@ const HomeMain = () => {
           </div>
           <div className="rounded-2xl overflow-hidden">
             <img
-              src={hero3}
+              src="/images/hero-3.jpeg"
               alt="hero-3"
               width={300}
               height={300}

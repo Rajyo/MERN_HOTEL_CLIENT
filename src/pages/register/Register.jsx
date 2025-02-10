@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import hero from "../login/login.jpg";
 import axiosInstance from "../../axios";
 import { handleGuestUser } from "../../components/HandleGuestUser";
 import { toast } from "react-toastify";
@@ -51,7 +50,7 @@ const Register = () => {
       <section className="m-6 sm:m-8 md:m-12 mt-12 sm:mt-20 sm:grid sm:grid-cols-2 border">
         <div className="max-[640px]:hidden sm:h-auto overflow-hidden">
           <img
-            src={hero}
+            src="/images/login.jpg"
             width={300}
             height={300}
             alt="cover"
